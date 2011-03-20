@@ -54,7 +54,7 @@ switch (TRUE) {
 }
 
 $result = @file_get_contents(ZIPCODE_URL . http_build_query($params));
-$result = @preg_match('/<body(?:.*?)>\s*(?:RES)?(\d*)/', $result, $matches);
+$result = @preg_match('/<body(?:.*?)>\s*(?:RES)?8?(\d*)/', $result, $matches);
 
 if ($result && !empty($matches[1])) {
 	print_out(true, $matches[1]);
